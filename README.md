@@ -42,6 +42,8 @@ prepared to submit the contact form to Formspree:
 Until the endpoint is configured, the form clearly asks visitors to contact Elvis directly by
 email. Formspree's own dashboard is optional for reviewing submissions; this portfolio does not
 need its own administrator dashboard.
+The form endpoint ID is public by design in a static site; never put a private API key or other
+secret in the client-side files.
 
 ### Custom domain
 
