@@ -52,20 +52,19 @@
           <a class="btn btn-ghost" href="mailto:elvisprogrammer1@gmail.com" data-i18n="emailMe">Écrire</a>
         </div>
 
-        <ul class="hero-stats" aria-label="Statistiques clés">
-          <li>
-            <strong>6+</strong>
-            <span data-i18n="statYears">ans à construire des solutions numériques</span>
-          </li>
-          <li>
-            <strong>20+</strong>
-            <span data-i18n="statProjects">projets IA / web / mobile</span>
-          </li>
-          <li>
-            <strong>100%</strong>
-            <span data-i18n="statSecurity">architecture orientée sécurité</span>
-          </li>
+        <ul class="hero-stats" aria-label="Expertise" data-i18n-aria-label="expertiseLabel">
+          <li><strong>Architecture</strong><span data-i18n="statYears">expérience en conception et développement</span></li>
+          <li><strong>Full-stack</strong><span data-i18n="statProjects">web • SaaS • mobile • IA</span></li>
+          <li><strong>Secure by design</strong><span data-i18n="statSecurity">sécurité, rôles et gouvernance</span></li>
         </ul>
+        <aside class="availability">
+          <span class="availability-dot" aria-hidden="true"></span>
+          <div>
+            <strong data-i18n="availabilityTitle">Disponible pour de nouvelles opportunités</strong>
+            <p data-i18n="availabilityText">Missions freelance, collaboration à distance et postes en développement logiciel ou architecture.</p>
+          </div>
+          <a href="#contact" data-i18n="availabilityEmail">Me contacter</a>
+        </aside>
       </div>
 
       <figure class="frame" aria-label="Portrait d'Elvis Programmer">
@@ -107,7 +106,7 @@
       </div>
 
       <div class="portfolio-toolbar">
-        <div class="filter-group" aria-label="Filtres du portfolio">
+        <div class="filter-group" aria-label="Filtres du portfolio" data-i18n-aria-label="filterLabel">
           <button type="button" class="filter-btn is-active" data-filter="all" data-i18n="filterAll">Tous</button>
           <button type="button" class="filter-btn" data-filter="web" data-i18n="filterWeb">Web</button>
           <button type="button" class="filter-btn" data-filter="mobile" data-i18n="filterMobile">Mobile</button>
@@ -116,19 +115,27 @@
         </div>
         <p class="portfolio-note" data-i18n="portfolioNote">Solutions conçues pour les institutions, la finance, la santé et les opérateurs publics.</p>
       </div>
+      <p class="project-disclosure" data-i18n="projectDisclosure">Certains éléments sont des concepts ou prototypes d’interface. Les chiffres de démonstration ont été retirés ; les résultats ne sont indiqués que lorsqu’ils sont vérifiables.</p>
 
       <div class="projects-grid">
         <article class="showcase project-card project-full" data-category="ai">
           <div class="project-head">
-            <span class="pill" data-i18n="projectAi">IA / Vision par ordinateur</span>
+            <div class="project-labels">
+              <span class="pill" data-i18n="projectAi">IA / Vision par ordinateur</span>
+              <span class="badge" data-i18n="projectStatusArchitecture">Architecture / périmètre</span>
+            </div>
             <h3>SmartVisionLab</h3>
           </div>
           <p data-i18n="smartVisionDesc">Plateforme d'IA et de vision par ordinateur pour plusieurs organisations, avec supervision des modèles, inférence sur flux vidéo et dashboards d'exploitation.</p>
           <div class="project-metrics">
-            <span>32k + events</span>
-            <span>98.7% accuracy</span>
-            <span>RBAC / Audit</span>
+            <span data-i18n="metricModel">Cycle des modèles</span>
+            <span data-i18n="metricVideo">Inférence vidéo</span>
+            <span data-i18n="metricGovernance">RBAC / audit</span>
           </div>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectSmartContext">Plateforme multi-organisation de vision par ordinateur</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectSmartApproach">Cycle de vie des modèles, inférence vidéo, événements temps réel et gouvernance par organisation.</dd></div>
+          </dl>
           <svg class="pipeline" viewBox="0 0 760 150" role="img" aria-labelledby="pipe-title pipe-desc">
             <title id="pipe-title">Flux de données SmartVisionLab</title>
             <desc id="pipe-desc">Les caméras et vidéos alimentent l'inférence, puis les événements sont envoyés via WebSocket vers les tableaux de bord. La sécurité, le RBAC, l'audit et la gouvernance couvrent l'ensemble du système.</desc>
@@ -161,10 +168,17 @@
 
         <article class="project-card project-web" data-category="web">
           <div class="project-head">
-            <span class="pill">PORTAIX</span>
-            <h3>Smart Port Platform <span class="badge">Concept</span></h3>
+            <div class="project-labels">
+              <span class="pill">PORTAIX</span>
+              <span class="badge" data-i18n="projectStatusConcept">Concept</span>
+            </div>
+            <h3>Smart Port Platform</h3>
           </div>
           <p data-i18n="portaixDesc">Concept de port intelligent pour gérer véhicules, marchandises et flux logistiques.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectPortaixContext">Concept de digitalisation des opérations portuaires</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectPortaixApproach">Relier l’accès des véhicules, la pesée, la traçabilité et la facturation dans un flux opérationnel.</dd></div>
+          </dl>
           <div class="project-metrics">
             <span>ANPR/LPR</span>
             <span>Weighbridge</span>
@@ -180,15 +194,18 @@
 
         <article class="project-card project-mobile" data-category="mobile">
           <div class="project-head">
-            <span class="pill" data-i18n="projectMobile">Mobile simulé</span>
+            <div class="project-labels">
+              <span class="pill" data-i18n="projectMobile">Prototype mobile</span>
+              <span class="badge" data-i18n="projectStatusPrototype">Prototype UI</span>
+            </div>
             <h3>BeYou Pay</h3>
           </div>
           <div class="phone-shell" aria-hidden="true">
             <div class="phone-screen">
               <span class="screen-header">B</span>
               <div class="wallet-card">
-                <small>Balance</small>
-                <strong>$8,420</strong>
+                <small data-i18n="projectMobilePrototype">Prototype UI — données fictives</small>
+                <strong data-i18n="projectPayMockLabel">Portefeuille démo</strong>
               </div>
               <div class="mini-bars">
                 <span></span><span></span><span></span><span></span>
@@ -196,19 +213,26 @@
             </div>
           </div>
           <p data-i18n="mobilePayDesc">Application mobile de paiement et de gestion financière pour utilisateurs et services.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectPayContext">Parcours mobile de paiement et de portefeuille</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectPayApproach">Écrans de portefeuille, transactions et suivi des dépenses ; aucun compte ou solde réel.</dd></div>
+          </dl>
         </article>
 
         <article class="project-card project-mobile" data-category="mobile">
           <div class="project-head">
-            <span class="pill" data-i18n="projectMobile">Mobile simulé</span>
+            <div class="project-labels">
+              <span class="pill" data-i18n="projectMobile">Prototype mobile</span>
+              <span class="badge" data-i18n="projectStatusPrototype">Prototype UI</span>
+            </div>
             <h3>MediTrack</h3>
           </div>
           <div class="phone-shell alt" aria-hidden="true">
             <div class="phone-screen">
               <span class="screen-header">+</span>
               <div class="patient-card">
-                <small>Patients</small>
-                <strong>1,248</strong>
+                <small data-i18n="projectMobilePrototype">Prototype UI — données fictives</small>
+                <strong data-i18n="projectHealthMockLabel">Vue de suivi</strong>
               </div>
               <div class="mini-bars">
                 <span></span><span></span><span></span><span></span>
@@ -216,33 +240,51 @@
             </div>
           </div>
           <p data-i18n="mobileHealthDesc">Prototype de gestion médicale pour suivi des patients, consultations et rappels.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectHealthContext">Prototype UI — données fictives</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectHealthApproach">Parcours de suivi des patients, consultations et rappels ; aucune donnée médicale réelle.</dd></div>
+          </dl>
         </article>
 
         <article class="project-card project-web" data-category="saas">
           <div class="project-head">
-            <span class="pill">SaaS</span>
+            <div class="project-labels">
+              <span class="pill">SaaS</span>
+              <span class="badge" data-i18n="projectStatusConcept">Concept</span>
+            </div>
             <h3>BeYou Nexus</h3>
           </div>
           <p data-i18n="nexusDesc">Plateforme SaaS multi-secteurs avec isolation des données par tenant et modules évolutifs.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectNexusContext">Concept de plateforme SaaS multi-tenant</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectNexusApproach">Isolation des données, permissions et modules configurables selon les organisations.</dd></div>
+          </dl>
           <ul class="chips" aria-label="Modules">
-            <li>Education</li>
-            <li>Banque</li>
-            <li>Entreprise</li>
-            <li>Santé</li>
-            <li>Agriculture</li>
+            <li data-i18n="moduleEducation">Éducation</li>
+            <li data-i18n="moduleBanking">Banque</li>
+            <li data-i18n="moduleEnterprise">Entreprise</li>
+            <li data-i18n="moduleHealth">Santé</li>
+            <li data-i18n="moduleAgriculture">Agriculture</li>
           </ul>
         </article>
 
         <article class="project-card project-web project-case" data-category="saas">
           <div class="project-head">
-            <span class="pill">GovTech</span>
+            <div class="project-labels">
+              <span class="pill">GovTech</span>
+              <span class="badge" data-i18n="projectStatusConcept">Concept</span>
+            </div>
             <h3>eCivilBurundi &amp; eID</h3>
           </div>
           <p data-i18n="govtechDesc">Recherche et concept sur la détection des fraudes, la prévention et l'interopérabilité entre institutions publiques.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectGovContext">Concept GovTech — état civil et identité numérique</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectGovApproach">Pistes de réflexion autour de la prévention de fraude et de l’interopérabilité institutionnelle.</dd></div>
+          </dl>
           <div class="case-list">
-            <span>Fraud detection</span>
-            <span>Interoperability</span>
-            <span>Public trust</span>
+            <span data-i18n="caseFraud">Prévention de la fraude</span>
+            <span data-i18n="caseInteroperability">Interopérabilité</span>
+            <span data-i18n="casePublicService">Service public</span>
           </div>
         </article>
       </div>
@@ -343,13 +385,15 @@
           <p class="lead" data-i18n="contactSubtitle">Envoyez-moi un court message sur ce que vous construisez. Je réponds par email ou via votre canal préféré.</p>
 
           <ul class="links">
-            <li><a href="https://www.linkedin.com/in/elvisprogrammer/" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://www.beyoudigitalsolutions.com" rel="noopener">BeYou Digital Solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/elvisprogrammer/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/elvisprogrammer1-lgtm" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.beyoudigitalsolutions.com" target="_blank" rel="noopener noreferrer">BeYou Digital Solutions</a></li>
             <li><a href="tel:+25765101118">+257 65101118</a></li>
+            <li><a href="mailto:elvisprogrammer1@gmail.com">elvisprogrammer1@gmail.com</a></li>
           </ul>
         </div>
 
-        <form class="contact-form" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm">
           <label>
             <span data-i18n="formName">Nom complet</span>
             <input type="text" name="name" placeholder="Votre nom" required>

@@ -31,11 +31,23 @@ To use your own domain, add it under **Settings > Pages > Custom domain** and fo
 
 ### Contact form
 
-GitHub Pages only hosts static files; it cannot run a private server-side backend. To deliver
-contact form messages without opening the visitor's email app, connect the form to a hosted form
-service such as Formspree. Create the form in that service, verify the receiving email address,
-then use its form endpoint in the HTML. The service provides its own dashboard for submissions;
-no admin dashboard needs to be built into this portfolio.
+GitHub Pages only hosts static files; it cannot run a private server-side backend. This site is
+prepared to submit the contact form to Formspree:
+
+1. Create a form in Formspree and verify `elvisprogrammer1@gmail.com` as its recipient.
+2. Copy the form endpoint shown by Formspree (`https://formspree.io/f/…`).
+3. Set that URL as `FORMSPREE_ENDPOINT` near the top of `assets/js/main.js`.
+4. Commit and push the change. The form reports success only after Formspree accepts a submission.
+
+Until the endpoint is configured, the form clearly asks visitors to contact Elvis directly by
+email. Formspree's own dashboard is optional for reviewing submissions; this portfolio does not
+need its own administrator dashboard.
+
+### Custom domain
+
+A custom domain is optional. Buy/register a domain with a registrar, add it under
+**Settings > Pages > Custom domain**, then configure the DNS records requested by GitHub. Keep
+the automatically provided `github.io` address if you do not want to manage a domain.
 
 ## Preview locally
 

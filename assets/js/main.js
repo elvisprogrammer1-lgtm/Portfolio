@@ -1,3 +1,5 @@
+var FORMSPREE_ENDPOINT = '';
+
 var translations = {
   fr: {
     navProjects: 'Projets',
@@ -8,6 +10,8 @@ var translations = {
     downloadCvPrimary: 'Télécharger le CV',
     emailMe: 'Écrire',
     navAbout: 'À propos',
+    expertiseLabel: 'Expertise',
+    filterLabel: 'Filtres du portfolio',
     aboutKicker: 'Expertise',
     aboutTitle: 'Je transforme des idées complexes en produits utiles et évolutifs.',
     value1Title: 'Architecture d\'entreprise',
@@ -32,19 +36,58 @@ var translations = {
     formTypeSaas: 'SaaS / plateforme',
     formMessage: 'Message',
     formSubmit: 'Envoyer le message',
-    formSuccess: 'Message envoyé avec succès. Je vous répondrai bientôt.',
+    formSending: 'Envoi en cours...',
+    formSuccess: 'Message envoyé. Merci, je vous répondrai bientôt.',
+    formFailure: 'L’envoi a échoué. Réessayez ou écrivez-moi directement par email.',
+    formNotConfigured: 'Le formulaire doit encore être connecté. Écrivez-moi directement par email.',
     formMissing: 'Veuillez compléter tous les champs avant l\'envoi.',
     formError: 'Veuillez fournir une adresse email valide.',
+    availabilityTitle: 'Disponible pour de nouvelles opportunités',
+    availabilityText: 'Missions freelance, collaboration à distance et postes en développement logiciel ou architecture.',
+    projectDisclosure: 'Certains éléments sont des concepts ou prototypes d’interface. Les chiffres de démonstration ont été retirés ; les résultats ne sont indiqués que lorsqu’ils sont vérifiables.',
+    projectContext: 'Périmètre présenté',
+    projectApproach: 'Approche',
+    projectStack: 'Technologies',
+    projectSmartContext: 'Plateforme multi-organisation de vision par ordinateur',
+    projectSmartApproach: 'Cycle de vie des modèles, inférence vidéo, événements temps réel et gouvernance par organisation.',
+    projectPortaixContext: 'Concept de digitalisation des opérations portuaires',
+    projectPortaixApproach: 'Relier l’accès des véhicules, la pesée, la traçabilité et la facturation dans un flux opérationnel.',
+    projectMobilePrototype: 'Prototype UI — données fictives',
+    projectPayContext: 'Parcours mobile de paiement et de portefeuille',
+    projectPayApproach: 'Écrans de portefeuille, transactions et suivi des dépenses ; aucun compte ou solde réel.',
+    projectHealthContext: 'Prototype UI — données fictives',
+    projectHealthApproach: 'Parcours de suivi des patients, consultations et rappels ; aucune donnée médicale réelle.',
+    projectNexusContext: 'Concept de plateforme SaaS multi-tenant',
+    projectNexusApproach: 'Isolation des données, permissions et modules configurables selon les organisations.',
+    projectGovContext: 'Concept GovTech — état civil et identité numérique',
+    projectGovApproach: 'Pistes de réflexion autour de la prévention de fraude et de l’interopérabilité institutionnelle.',
+    projectStatusConcept: 'Concept',
+    projectStatusPrototype: 'Prototype UI',
+    projectStatusArchitecture: 'Architecture / périmètre',
+    metricModel: 'Cycle des modèles',
+    metricVideo: 'Inférence vidéo',
+    metricGovernance: 'RBAC / audit',
+    projectPayMockLabel: 'Portefeuille démo',
+    projectHealthMockLabel: 'Vue de suivi',
+    moduleEducation: 'Éducation',
+    moduleBanking: 'Banque',
+    moduleEnterprise: 'Entreprise',
+    moduleHealth: 'Santé',
+    moduleAgriculture: 'Agriculture',
+    caseFraud: 'Prévention de la fraude',
+    caseInteroperability: 'Interopérabilité',
+    casePublicService: 'Service public',
+    availabilityEmail: 'Me contacter',
     heroEyebrow: 'Architecte logiciel • Développeur Full-Stack',
     heroTitle: 'Je conçois des plateformes sécurisées, multi-tenant et des systèmes IA qui font avancer les institutions.',
     heroSubtitle: 'Je suis Elvis, architecte logiciel et développeur full-stack au Burundi. Je conçois aujourd\'hui des systèmes numériques pour les processus administratifs et financiers au Bureau du Premier Ministre, et je suis ouvert aux missions à distance.',
-    statYears: 'ans à construire des solutions numériques',
-    statProjects: 'projets IA / web / mobile',
-    statSecurity: 'architecture orientée sécurité',
+    statYears: 'expérience en conception et développement',
+    statProjects: 'web • SaaS • mobile • IA',
+    statSecurity: 'sécurité, rôles et gouvernance',
     projectKicker: 'Portfolio',
     projectsTitle: 'Projets',
     projectAi: 'IA / Vision par ordinateur',
-    projectMobile: 'Mobile simulé',
+    projectMobile: 'Prototype mobile',
     smartVisionDesc: 'Une plateforme d\'IA et de vision par ordinateur pensée pour plusieurs organisations. Elle gère le cycle de vie des modèles, déploie et supervise les modèles, puis exécute des inférences sur des flux caméra et vidéo.',
     portaixDesc: 'Concept de port intelligent pour gérer véhicules, marchandises et flux logistiques.',
     portaixItem1: 'Contrôle et automatisation des barrières',
@@ -107,6 +150,8 @@ var translations = {
     downloadCvPrimary: 'Download CV',
     emailMe: 'Email me',
     navAbout: 'About',
+    expertiseLabel: 'Areas of expertise',
+    filterLabel: 'Portfolio filters',
     aboutKicker: 'Expertise',
     aboutTitle: 'I turn complex ideas into useful, scalable products.',
     value1Title: 'Enterprise architecture',
@@ -131,19 +176,58 @@ var translations = {
     formTypeSaas: 'SaaS / platform',
     formMessage: 'Message',
     formSubmit: 'Send message',
-    formSuccess: 'Message sent successfully. I will reply soon.',
+    formSending: 'Sending...',
+    formSuccess: 'Message sent. Thank you — I will get back to you soon.',
+    formFailure: 'Message could not be sent. Please try again or email me directly.',
+    formNotConfigured: 'The form still needs to be connected. Please email me directly.',
     formMissing: 'Please complete all fields before submitting.',
     formError: 'Please provide a valid email address.',
+    availabilityTitle: 'Open to new opportunities',
+    availabilityText: 'Freelance engagements, remote collaboration, and software development or architecture roles.',
+    projectDisclosure: 'Some items are concepts or interface prototypes. Demonstration figures have been removed; outcomes are shown only when verifiable.',
+    projectContext: 'Scope',
+    projectApproach: 'Approach',
+    projectStack: 'Technologies',
+    projectSmartContext: 'Multi-organization computer vision platform',
+    projectSmartApproach: 'Model lifecycle, video inference, real-time events, and organization-level governance.',
+    projectPortaixContext: 'Concept for digitizing port operations',
+    projectPortaixApproach: 'Connect vehicle access, weighing, traceability, and billing in one operational flow.',
+    projectMobilePrototype: 'UI prototype — fictional data',
+    projectPayContext: 'Mobile payment and wallet journey',
+    projectPayApproach: 'Wallet, transaction, and spending views; no real account or balance.',
+    projectHealthContext: 'Patient follow-up interface',
+    projectHealthApproach: 'Patient follow-up, appointments, and reminders; no real medical data.',
+    projectNexusContext: 'Multi-tenant SaaS platform concept',
+    projectNexusApproach: 'Data isolation, permissions, and configurable modules for different organizations.',
+    projectGovContext: 'GovTech concept — civil registry and digital identity',
+    projectGovApproach: 'Exploration of fraud prevention and interoperability across public institutions.',
+    projectStatusConcept: 'Concept',
+    projectStatusPrototype: 'UI prototype',
+    projectStatusArchitecture: 'Architecture / scope',
+    metricModel: 'Model lifecycle',
+    metricVideo: 'Video inference',
+    metricGovernance: 'RBAC / audit',
+    projectPayMockLabel: 'Demo wallet',
+    projectHealthMockLabel: 'Care overview',
+    moduleEducation: 'Education',
+    moduleBanking: 'Banking',
+    moduleEnterprise: 'Enterprise',
+    moduleHealth: 'Healthcare',
+    moduleAgriculture: 'Agriculture',
+    caseFraud: 'Fraud prevention',
+    caseInteroperability: 'Interoperability',
+    casePublicService: 'Public service',
+    availabilityEmail: 'Get in touch',
     heroEyebrow: 'Software Architect • Full-Stack Developer',
     heroTitle: 'I design secure, multi-tenant platforms and AI systems that move institutions forward.',
     heroSubtitle: 'I\'m Elvis, a software architect and full-stack developer based in Burundi. I build digital systems for administrative and financial processes at the Office of the Prime Minister and I\'m open to remote work.',
-    statYears: 'years building digital solutions',
-    statProjects: 'AI / web / mobile projects',
-    statSecurity: 'security-first architecture',
+    statYears: 'software design and delivery',
+    statProjects: 'web • SaaS • mobile • AI',
+    statSecurity: 'security, access control and governance',
     projectKicker: 'Portfolio',
     projectsTitle: 'Projects',
     projectAi: 'AI / Computer Vision',
-    projectMobile: 'Simulated mobile',
+    projectMobile: 'Mobile prototype',
     smartVisionDesc: 'An AI and computer vision platform built for multiple organizations. It manages model lifecycle, deploys and supervises models, and runs inferencing on camera and video streams.',
     portaixDesc: 'Concept for a smart port to manage vehicles, cargo and logistics flows.',
     portaixItem1: 'Barrier control and automation',
@@ -209,6 +293,10 @@ function setLanguage(lang) {
     var text = translations[currentLang][key];
     if (text) element.textContent = text;
   });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(function (element) {
+    var label = translations[currentLang][element.getAttribute('data-i18n-aria-label')];
+    if (label) element.setAttribute('aria-label', label);
+  });
 
   document.documentElement.lang = currentLang;
   document.title = translations[currentLang].siteTitle;
@@ -241,21 +329,15 @@ if (copy && copyStatus) {
 var form = document.getElementById('contactForm');
 var formStatus = document.getElementById('form-status');
 if (form && formStatus) {
-  form.addEventListener('submit', function (event) {
+  form.addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    var formData = new FormData(form);
-    var name = (formData.get('name') || '').toString().trim();
-    var email = (formData.get('email') || '').toString().trim();
-    var projectType = (formData.get('projectType') || '').toString().trim();
-    var message = (formData.get('message') || '').toString().trim();
-
-    if (!name || !email || !projectType || !message) {
-      formStatus.textContent = translations[currentLang].formMissing;
-      formStatus.dataset.state = 'error';
+    if (!form.reportValidity()) {
       return;
     }
 
+    var formData = new FormData(form);
+    var email = (formData.get('email') || '').toString().trim();
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       formStatus.textContent = translations[currentLang].formError;
@@ -263,22 +345,38 @@ if (form && formStatus) {
       return;
     }
 
-    var recipient = 'elvisprogrammer1@gmail.com';
-    var subject = encodeURIComponent('Nouveau message de ' + name + ' - ' + projectType);
-    var body = encodeURIComponent(
-      'Nom: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Type de projet: ' + projectType + '\n\n' +
-      'Message:\n' + message
-    );
+    if (!FORMSPREE_ENDPOINT) {
+      formStatus.textContent = translations[currentLang].formNotConfigured;
+      formStatus.dataset.state = 'error';
+      return;
+    }
 
-    formStatus.textContent = translations[currentLang].formSuccess;
-    formStatus.dataset.state = 'success';
-    form.reset();
+    var submitButton = form.querySelector('[type="submit"]');
+    submitButton.disabled = true;
+    formStatus.textContent = translations[currentLang].formSending;
+    formStatus.dataset.state = 'pending';
 
-    setTimeout(function () {
-      window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
-    }, 250);
+    try {
+      var response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed with status ' + response.status);
+      }
+
+      form.reset();
+      formStatus.textContent = translations[currentLang].formSuccess;
+      formStatus.dataset.state = 'success';
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      formStatus.textContent = translations[currentLang].formFailure;
+      formStatus.dataset.state = 'error';
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }
 
