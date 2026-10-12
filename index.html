@@ -115,7 +115,7 @@
         </div>
         <p class="portfolio-note" data-i18n="portfolioNote">Solutions conçues pour les institutions, la finance, la santé et les opérateurs publics.</p>
       </div>
-      <p class="project-disclosure" data-i18n="projectDisclosure">Certains éléments sont des concepts ou prototypes d’interface. Les chiffres de démonstration ont été retirés ; les résultats ne sont indiqués que lorsqu’ils sont vérifiables.</p>
+      <p class="project-disclosure" data-i18n="projectDisclosure">Les statuts distinguent le projet déployé, les applications en développement, les prototypes et les concepts. Aucun détail opérationnel ni donnée sensible des systèmes institutionnels n’est présenté.</p>
 
       <div class="projects-grid">
         <article class="showcase project-card project-full" data-category="ai">
@@ -164,6 +164,32 @@
             <rect x="2" y="116" width="756" height="30" rx="6" class="band"/>
             <text x="380" y="136" text-anchor="middle" class="pb">Sécurité, RBAC, audit et gouvernance sur chaque tenant</text>
           </svg>
+        </article>
+
+        <article class="showcase project-card project-full" data-category="web">
+          <div class="project-head">
+            <div class="project-labels">
+              <span class="pill" data-i18n="projectWeb">Application web</span>
+              <span class="badge" data-i18n="projectStatusDeployed">Déployé en environnement institutionnel</span>
+            </div>
+            <h3>SIGAF-Primature</h3>
+          </div>
+          <p data-i18n="sigafDesc">Système intégré de gestion administrative et financière conçu pour la Primature et déployé sur son infrastructure institutionnelle.</p>
+          <div class="project-metrics">
+            <span data-i18n="sigafAreaBudget">Budget &amp; dépenses</span>
+            <span data-i18n="sigafAreaPayroll">Paie &amp; ressources humaines</span>
+            <span data-i18n="sigafAreaMission">Missions &amp; parc automobile</span>
+            <span data-i18n="sigafAreaGovernance">Rôles, validations &amp; audit</span>
+          </div>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="sigafContext">Application métier institutionnelle couvrant plusieurs processus administratifs et financiers.</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="sigafApproach">Workflows de validation, gestion des accès par rôle, suivi des opérations et vérification des documents.</dd></div>
+          </dl>
+          <ul class="chips project-tech" aria-label="Technologies" data-i18n-aria-label="projectStack">
+            <li>Laravel 12</li>
+            <li>PHP 8.2+</li>
+            <li>JavaScript</li>
+          </ul>
         </article>
 
         <article class="project-card project-web" data-category="web">
@@ -239,14 +265,14 @@
           <div class="project-head">
             <div class="project-labels">
               <span class="pill">SaaS</span>
-              <span class="badge" data-i18n="projectStatusConcept">Concept</span>
+              <span class="badge" data-i18n="projectStatusPrototype">Prototype technique</span>
             </div>
             <h3>BeYou Nexus</h3>
           </div>
-          <p data-i18n="nexusDesc">Plateforme SaaS multi-secteurs avec isolation des données par tenant et modules évolutifs.</p>
+          <p data-i18n="nexusDesc">Prototype technique d’une plateforme SaaS multi-secteurs avec isolation des données par tenant et modules évolutifs.</p>
           <dl class="project-details">
-            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectNexusContext">Concept de plateforme SaaS multi-tenant</dd></div>
-            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectNexusApproach">Isolation des données, permissions et modules configurables selon les organisations.</dd></div>
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectNexusContext">Prototype technique de plateforme SaaS multi-tenant</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectNexusApproach">Architecture par tenant, rôles et permissions, MFA, audit et isolation sectorielle des données.</dd></div>
           </dl>
           <ul class="chips" aria-label="Modules">
             <li data-i18n="moduleEducation">Éducation</li>
@@ -257,17 +283,57 @@
           </ul>
         </article>
 
+        <article class="project-card project-web" data-category="web">
+          <div class="project-head">
+            <div class="project-labels">
+              <span class="pill" data-i18n="projectWeb">Application web</span>
+              <span class="badge" data-i18n="projectDevelopment">En développement</span>
+            </div>
+            <h3>SOCOU-U</h3>
+          </div>
+          <p data-i18n="socouDesc">Plateforme web de gestion destinée à une organisation coopérative, avec un espace public et des outils d’administration.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="socouContext">Site institutionnel et back-office pour les projets de développement rural et social.</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="socouApproach">Gestion de projets, bénéficiaires, coopératives, formations, actualités, messages et rapports.</dd></div>
+          </dl>
+          <ul class="chips project-tech" aria-label="Technologies" data-i18n-aria-label="projectStack">
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li data-i18n="techMvc">MVC</li>
+          </ul>
+        </article>
+
+        <article class="project-card project-web" data-category="web">
+          <div class="project-head">
+            <div class="project-labels">
+              <span class="pill">GovTech</span>
+              <span class="badge" data-i18n="projectStatusAppPrototype">Prototype applicatif</span>
+            </div>
+            <h3>eCivilBurundi</h3>
+          </div>
+          <p data-i18n="ecivilDesc">Application web de gestion des dossiers d’état civil, présentée comme un prototype et non comme un service public officiellement déployé.</p>
+          <dl class="project-details">
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="ecivilContext">Gestion des citoyens et des actes de naissance, mariage, décès et divorce.</dd></div>
+            <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="ecivilApproach">Interfaces d’administration, gestion des documents, des comptes utilisateurs et des notifications.</dd></div>
+          </dl>
+          <ul class="chips project-tech" aria-label="Technologies" data-i18n-aria-label="projectStack">
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </article>
+
         <article class="project-card project-web project-case" data-category="saas">
           <div class="project-head">
             <div class="project-labels">
               <span class="pill">GovTech</span>
               <span class="badge" data-i18n="projectStatusConcept">Concept</span>
             </div>
-            <h3>eCivilBurundi &amp; eID</h3>
+            <h3>eID GovTech</h3>
           </div>
           <p data-i18n="govtechDesc">Recherche et concept sur la détection des fraudes, la prévention et l'interopérabilité entre institutions publiques.</p>
           <dl class="project-details">
-            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectGovContext">Concept GovTech — état civil et identité numérique</dd></div>
+            <div><dt data-i18n="projectContext">Périmètre présenté</dt><dd data-i18n="projectGovContext">Concept GovTech — identité numérique et services publics</dd></div>
             <div><dt data-i18n="projectApproach">Approche</dt><dd data-i18n="projectGovApproach">Pistes de réflexion autour de la prévention de fraude et de l’interopérabilité institutionnelle.</dd></div>
           </dl>
           <div class="case-list">
