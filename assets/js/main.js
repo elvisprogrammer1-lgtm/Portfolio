@@ -407,10 +407,35 @@ function setLanguage(lang) {
   updateCvDownloads();
   updateWhatsAppLinks();
   updateFormPlaceholders();
+  updateProjectImageAlt();
+}
+
+function updateProjectImageAlt() {
+  document.querySelectorAll('.project-media img').forEach(function (image) {
+    var title = image.closest('.project-card').querySelector('h3').textContent.trim();
+    image.alt = currentLang === 'fr' ? 'Capture d’écran du projet ' + title : 'Screenshot of ' + title;
+  });
+}
+
+function initializeProjectMedia() {
+  document.querySelectorAll('.project-media img').forEach(function (image) {
+    var figure = image.closest('.project-media');
+    var showImage = function () {
+      if (image.naturalWidth > 0) {
+        figure.classList.remove('project-media-empty');
+        figure.classList.add('has-image');
+      }
+    };
+
+    image.addEventListener('load', showImage);
+    showImage();
+  });
 }
 
 updateCvDownloads();
 updateWhatsAppLinks();
+updateProjectImageAlt();
+initializeProjectMedia();
 
 var year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();

@@ -215,7 +215,7 @@ main, .foot {
 }
 .project-media { margin: 0; }
 .project-media img {
-  width: 100%; aspect-ratio: 16 / 7; border-radius: 0.95rem; object-fit: cover;
+  display: none; width: 100%; aspect-ratio: 16 / 7; border-radius: 0.95rem; object-fit: cover;
 }
 .project-media-empty {
   display: grid; place-content: center; justify-items: center; gap: 0.65rem;
@@ -231,6 +231,10 @@ main, .foot {
 }
 .media-placeholder-art svg { width: 2rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .project-media figcaption { font-size: 0.78rem; font-weight: 600; }
+.project-media.has-image img { display: block; }
+.project-media.has-image .media-placeholder-art,
+.project-media.has-image figcaption { display: none; }
+.project-media.has-image { display: block; min-height: 0; padding: 0; border: 0; background: transparent; }
 .project-outcome {
   display: grid; gap: 0.25rem; padding: 0.8rem 0.9rem;
   border-left: 3px solid var(--green-deep); border-radius: 0 0.75rem 0.75rem 0;

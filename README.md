@@ -50,19 +50,25 @@ they are not represented as released or production-deployed applications.
 
 ### Project images
 
-Each project card has a reserved visual slot in `index.html`, identified by its
-`data-project-media` value. To add a screenshot, save a sanitized, publishable image under
-`assets/img/projects/` and replace that figure's placeholder content with an image, for example:
+Put each sanitized, publishable screenshot in `assets/img/projects/` using the exact name below.
+The site checks these paths automatically: if an image exists, it replaces the placeholder; if it
+does not, the placeholder remains. Use WebP files and keep the listed filenames unchanged.
 
-```html
-<figure class="project-media" data-project-media="sigaf">
-  <img src="assets/img/projects/sigaf.webp" alt="Capture anonymisée du tableau de bord SIGAF-Primature" data-i18n-alt="sigafScreenshotAlt" width="1200" height="525" loading="lazy">
-</figure>
-```
+| Project | Image filename |
+| --- | --- |
+| SmartVisionLab | `smartvision.webp` |
+| SIGAF-Primature | `sigaf.webp` |
+| PORTAIX | `portaix.webp` |
+| IcoWipfuza | `icowipfuza.webp` |
+| Burundi Services | `burundi-services.webp` |
+| BeYou Nexus | `beyou-nexus.webp` |
+| SOCOU-U | `socou-u.webp` |
+| eCivilBurundi | `ecivilburundi.webp` |
+| eID GovTech | `eid-govtech.webp` |
 
-Use a descriptive `data-i18n-alt` key with French and English translations, and only publish screenshots that
-contain no personal records, credentials, signatures, internal URLs, or other confidential data.
-The `project-media` styles keep images responsive.
+After copying an image into the folder, commit and push the file to `main` so GitHub Pages can
+publish it. The browser may need a refresh after deployment. Never publish screenshots containing
+personal records, credentials, signatures, internal URLs, or other confidential data.
 
 ### Custom domain
 
