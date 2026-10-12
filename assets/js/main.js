@@ -86,6 +86,7 @@ var translations = {
     availabilityEmail: 'Me contacter',
     whatsappCta: 'Écrire sur WhatsApp',
     whatsappLabel: 'Écrire à Elvis Programmer sur WhatsApp',
+    whatsappPrefill: 'Bonjour Elvis, j’ai découvert votre portfolio et souhaiterais échanger avec vous au sujet d’un projet.',
     heroEyebrow: 'Architecte logiciel • Développeur Full-Stack',
     heroTitle: 'Je conçois des plateformes sécurisées, multi-tenant et des systèmes IA qui font avancer les institutions.',
     heroSubtitle: 'Je suis Elvis, architecte logiciel et développeur full-stack au Burundi. Je conçois aujourd\'hui des systèmes numériques pour les processus administratifs et financiers au Bureau du Premier Ministre, et je suis ouvert aux missions à distance.',
@@ -234,6 +235,7 @@ var translations = {
     availabilityEmail: 'Get in touch',
     whatsappCta: 'Message me on WhatsApp',
     whatsappLabel: 'Message Elvis Programmer on WhatsApp',
+    whatsappPrefill: 'Hello Elvis, I found your portfolio and would like to discuss a project with you.',
     heroEyebrow: 'Software Architect • Full-Stack Developer',
     heroTitle: 'I design secure, multi-tenant platforms and AI systems that move institutions forward.',
     heroSubtitle: 'I\'m Elvis, a software architect and full-stack developer based in Burundi. I build digital systems for administrative and financial processes at the Office of the Prime Minister and I\'m open to remote work.',
@@ -313,6 +315,13 @@ function updateCvDownloads() {
   });
 }
 
+function updateWhatsAppLinks() {
+  var message = encodeURIComponent(translations[currentLang].whatsappPrefill);
+  document.querySelectorAll('[data-whatsapp-link]').forEach(function (link) {
+    link.href = 'https://wa.me/25765101118?text=' + message;
+  });
+}
+
 function setLanguage(lang) {
   currentLang = lang in translations ? lang : 'fr';
   var items = document.querySelectorAll('[data-i18n]');
@@ -334,10 +343,12 @@ function setLanguage(lang) {
   });
 
   updateCvDownloads();
+  updateWhatsAppLinks();
   updateFormPlaceholders();
 }
 
 updateCvDownloads();
+updateWhatsAppLinks();
 
 var year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
