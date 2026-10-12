@@ -31,19 +31,22 @@ To use your own domain, add it under **Settings > Pages > Custom domain** and fo
 
 ### Contact form
 
-GitHub Pages only hosts static files; it cannot run a private server-side backend. This site is
-prepared to submit the contact form to Formspree:
+GitHub Pages only hosts static files; it cannot run a private server-side backend. The contact
+form submits to the configured Formspree endpoint, which sends submissions to
+`elvisprogrammer1@gmail.com`:
 
-1. Create a form in Formspree and verify `elvisprogrammer1@gmail.com` as its recipient.
-2. Copy the form endpoint shown by Formspree (`https://formspree.io/f/…`).
-3. Set that URL as `FORMSPREE_ENDPOINT` near the top of `assets/js/main.js`.
-4. Commit and push the change. The form reports success only after Formspree accepts a submission.
+The endpoint is configured as `FORMSPREE_ENDPOINT` near the top of `assets/js/main.js`. Form
+submissions are sent over HTTPS, and the UI reports success only after Formspree accepts them.
 
-Until the endpoint is configured, the form clearly asks visitors to contact Elvis directly by
-email. Formspree's own dashboard is optional for reviewing submissions; this portfolio does not
-need its own administrator dashboard.
-The form endpoint ID is public by design in a static site; never put a private API key or other
-secret in the client-side files.
+Formspree's dashboard is optional for reviewing submissions; this portfolio does not need its own
+administrator dashboard. The form endpoint identifier is public by design in a static site; never
+put a private API key or other secret in the client-side files.
+
+### Mobile projects
+
+The portfolio presents IcoWipfuza and Burundi Services as Flutter projects in development. Their
+descriptions and technology tags reflect the mobile codebases in the local `D:\PROJECTS` workspace;
+they are not represented as released or production-deployed applications.
 
 ### Custom domain
 
