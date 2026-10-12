@@ -1,4 +1,4 @@
-var FORMSPREE_ENDPOINT = '';
+var FORMSPREE_ENDPOINT = 'https://formspree.io/f/maeqbzlp';
 
 var translations = {
   fr: {
