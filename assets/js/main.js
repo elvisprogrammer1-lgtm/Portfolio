@@ -6,9 +6,9 @@ var translations = {
     navExperience: 'Expérience',
     navSkills: 'Compétences',
     navContact: 'Contact',
-    downloadCv: 'Télécharger le CV',
-    downloadCvPrimary: 'Télécharger le CV',
-    emailMe: 'Écrire',
+    downloadCv: 'Télécharger mon CV (FR)',
+    downloadCvPrimary: 'Télécharger mon CV (FR)',
+    emailMe: 'Me contacter',
     navAbout: 'À propos',
     expertiseLabel: 'Expertise',
     filterLabel: 'Filtres du portfolio',
@@ -154,9 +154,9 @@ var translations = {
     navExperience: 'Experience',
     navSkills: 'Skills',
     navContact: 'Contact',
-    downloadCv: 'Download CV',
-    downloadCvPrimary: 'Download CV',
-    emailMe: 'Email me',
+    downloadCv: 'Download my CV (EN)',
+    downloadCvPrimary: 'Download my CV (EN)',
+    emailMe: 'Contact me',
     navAbout: 'About',
     expertiseLabel: 'Areas of expertise',
     filterLabel: 'Portfolio filters',
@@ -300,6 +300,18 @@ var translations = {
 };
 
 var currentLang = 'fr';
+var cvDownloads = {
+  fr: { href: 'assets/Elvis_Niyomwungere_CV_FR.pdf', filename: 'Elvis_Niyomwungere_CV_FR.pdf' },
+  en: { href: 'assets/Elvis_Niyomwungere_CV_EN.pdf', filename: 'Elvis_Niyomwungere_CV_EN.pdf' }
+};
+
+function updateCvDownloads() {
+  var cv = cvDownloads[currentLang];
+  document.querySelectorAll('[data-cv-download]').forEach(function (link) {
+    link.href = cv.href;
+    link.setAttribute('download', cv.filename);
+  });
+}
 
 function setLanguage(lang) {
   currentLang = lang in translations ? lang : 'fr';
@@ -321,8 +333,11 @@ function setLanguage(lang) {
     btn.classList.toggle('is-active', btn.getAttribute('data-lang') === currentLang);
   });
 
+  updateCvDownloads();
   updateFormPlaceholders();
 }
+
+updateCvDownloads();
 
 var year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();

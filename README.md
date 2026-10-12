@@ -71,6 +71,6 @@ Then visit http://localhost:8000.
 | Text, projects, experience, links | `index.html` |
 | Colors, fonts, spacing | `:root` variables at the top of `assets/css/style.css` |
 | Portrait | replace `assets/img/elvis.png` (keep a square-ish crop; the two detection boxes in the hero are positioned in `.box-face` and `.box-laptop` in the CSS) |
-| CV download | replace `assets/Elvis_Niyomwungere_Resume.pdf` (keep the file name, or update the two links in `index.html`) |
+| CV downloads | replace `assets/Elvis_Niyomwungere_CV_FR.pdf` and `assets/Elvis_Niyomwungere_CV_EN.pdf`; both download links follow the selected site language |
 
 Fonts (Bricolage Grotesque and Public Sans) load from Google Fonts. If they are blocked, the page falls back to system fonts.
