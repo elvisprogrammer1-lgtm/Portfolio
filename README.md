@@ -48,6 +48,22 @@ The portfolio presents IcoWipfuza and Burundi Services as Flutter projects in de
 descriptions and technology tags reflect the mobile codebases in the local `D:\PROJECTS` workspace;
 they are not represented as released or production-deployed applications.
 
+### Project images
+
+Each project card has a reserved visual slot in `index.html`, identified by its
+`data-project-media` value. To add a screenshot, save a sanitized, publishable image under
+`assets/img/projects/` and replace that figure's placeholder content with an image, for example:
+
+```html
+<figure class="project-media" data-project-media="sigaf">
+  <img src="assets/img/projects/sigaf.webp" alt="Capture anonymisée du tableau de bord SIGAF-Primature" data-i18n-alt="sigafScreenshotAlt" width="1200" height="525" loading="lazy">
+</figure>
+```
+
+Use a descriptive `data-i18n-alt` key with French and English translations, and only publish screenshots that
+contain no personal records, credentials, signatures, internal URLs, or other confidential data.
+The `project-media` styles keep images responsive.
+
 ### Custom domain
 
 A custom domain is optional. Buy/register a domain with a registrar, add it under

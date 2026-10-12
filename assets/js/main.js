@@ -50,7 +50,14 @@ var translations = {
     formError: 'Veuillez fournir une adresse email valide.',
     availabilityTitle: 'Disponible pour de nouvelles opportunités',
     availabilityText: 'Missions freelance, collaboration à distance et postes en développement logiciel ou architecture.',
-    projectDisclosure: 'Les statuts distinguent le projet déployé, les applications en développement, les prototypes et les concepts. Aucun détail opérationnel ni donnée sensible des systèmes institutionnels n’est présenté.',
+    projectDisclosure: 'Les statuts distinguent les projets déployés, en développement, les prototypes et les concepts. Les livrables décrits sont vérifiables ; aucun chiffre d’impact n’est estimé. Aucune donnée sensible des systèmes institutionnels n’est présentée.',
+    projectMediaPlaceholder: 'Capture d’écran à ajouter',
+    sigafScreenshotAlt: 'Capture anonymisée du tableau de bord SIGAF-Primature',
+    projectOutcomeLabel: 'Livrable vérifiable',
+    sigafOutcome: 'Déploiement sur l’infrastructure institutionnelle ; périmètre couvrant budget, paie/RH, missions et gouvernance.',
+    icoOutcome: 'Application Flutter articulée autour de parcours client et prestataire, reliée à une API Laravel.',
+    burundiOutcome: 'Parcours de services en français, anglais et kirundi, du catalogue jusqu’au suivi des demandes.',
+    nexusOutcome: 'Prototype multi-tenant organisé en cinq secteurs, avec permissions, MFA et audit.',
     projectContext: 'Périmètre présenté',
     projectApproach: 'Approche',
     projectStack: 'Technologies',
@@ -221,7 +228,14 @@ var translations = {
     formError: 'Please provide a valid email address.',
     availabilityTitle: 'Open to new opportunities',
     availabilityText: 'Freelance engagements, remote collaboration, and software development or architecture roles.',
-    projectDisclosure: 'Statuses distinguish the deployed project, applications in development, prototypes, and concepts. No operational details or sensitive institutional data are shown.',
+    projectDisclosure: 'Statuses distinguish deployed projects, work in progress, prototypes, and concepts. Described deliverables are verifiable; no impact figures are estimated. No sensitive institutional data is shown.',
+    projectMediaPlaceholder: 'Add project screenshot',
+    sigafScreenshotAlt: 'Anonymized screenshot of the SIGAF-Primature dashboard',
+    projectOutcomeLabel: 'Verifiable deliverable',
+    sigafOutcome: 'Deployed on institutional infrastructure; scope covers budgeting, payroll/HR, missions, and governance.',
+    icoOutcome: 'Flutter application connecting customer and provider journeys to a Laravel API.',
+    burundiOutcome: 'Public-service journeys in French, English, and Kirundi, from service catalog to request tracking.',
+    nexusOutcome: 'Multi-tenant prototype structured across five sectors, with permissions, MFA, and audit.',
     projectContext: 'Scope',
     projectApproach: 'Approach',
     projectStack: 'Technologies',
@@ -377,6 +391,10 @@ function setLanguage(lang) {
   document.querySelectorAll('[data-i18n-aria-label]').forEach(function (element) {
     var label = translations[currentLang][element.getAttribute('data-i18n-aria-label')];
     if (label) element.setAttribute('aria-label', label);
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(function (element) {
+    var alt = translations[currentLang][element.getAttribute('data-i18n-alt')];
+    if (alt) element.setAttribute('alt', alt);
   });
 
   document.documentElement.lang = currentLang;
