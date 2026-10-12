@@ -26,6 +26,11 @@ var translations = {
     filterAi: 'IA',
     filterSaas: 'SaaS',
     projectWeb: 'Application web',
+    mobileNavLabel: 'Navigation mobile',
+    mobileNavHome: 'Accueil',
+    mobileNavProjects: 'Projets',
+    mobileNavExperience: 'Parcours',
+    mobileNavContact: 'Contact',
     portfolioNote: 'Solutions conçues pour les institutions, la finance, la santé et les opérateurs publics.',
     formName: 'Nom complet',
     formEmail: 'Email',
@@ -192,6 +197,11 @@ var translations = {
     filterAi: 'AI',
     filterSaas: 'SaaS',
     projectWeb: 'Web application',
+    mobileNavLabel: 'Mobile navigation',
+    mobileNavHome: 'Home',
+    mobileNavProjects: 'Projects',
+    mobileNavExperience: 'Experience',
+    mobileNavContact: 'Contact',
     portfolioNote: 'Solutions built for institutions, finance, healthcare and public operators.',
     formName: 'Full name',
     formEmail: 'Email',
@@ -475,6 +485,51 @@ document.querySelectorAll('.lang-btn').forEach(function (button) {
     setLanguage(button.getAttribute('data-lang'));
   });
 });
+
+var mobileSections = Array.from(document.querySelectorAll('[data-mobile-nav]')).map(function (link) {
+  return {
+    link: link,
+    section: document.getElementById(link.getAttribute('href').slice(1))
+  };
+}).filter(function (item) {
+  return item.section;
+});
+
+function setActiveMobileSection(section) {
+  mobileSections.forEach(function (item) {
+    if (item.section === section) {
+      item.link.setAttribute('aria-current', 'location');
+    } else {
+      item.link.removeAttribute('aria-current');
+    }
+  });
+}
+
+mobileSections.forEach(function (item) {
+  item.link.addEventListener('click', function () {
+    setActiveMobileSection(item.section);
+  });
+});
+
+if ('IntersectionObserver' in window && mobileSections.length) {
+  var mobileSectionObserver = new IntersectionObserver(function (entries) {
+    var visible = entries.filter(function (entry) {
+      return entry.isIntersecting;
+    }).sort(function (a, b) {
+      return b.intersectionRatio - a.intersectionRatio;
+    });
+
+    if (!visible.length) return;
+    setActiveMobileSection(visible[0].target);
+  }, {
+    rootMargin: '-15% 0px -65% 0px',
+    threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
+  });
+
+  mobileSections.forEach(function (item) {
+    mobileSectionObserver.observe(item.section);
+  });
+}
 
 function updateFormPlaceholders() {
   var name = document.querySelector('#contactForm input[name="name"]');
